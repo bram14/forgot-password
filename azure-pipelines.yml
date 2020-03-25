@@ -17,15 +17,3 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-  
-- task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (4358315d-1d4f-46ac-801d-ed76dad7b3a6)'
-    appType: 'webApp'
-    WebAppName: 'resources123'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
